@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh './mvnw -DskiipTests package'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh './mvnw test'
             }
         }
         stage('Deploy') {
